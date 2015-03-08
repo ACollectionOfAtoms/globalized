@@ -12,6 +12,10 @@ import CoreData
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var managedObjectContext: NSManagedObjectContext? = nil
+    
+    //Foursquare API info
+    var kCLIENTID: NSString = "VV3X5M1KX2MRS4TXDR5EI2XYOUZL54TPWL2DEL5N4FZINFTA"
+    var kCLIENTSECRET: NSString = "225KC0C4E3WZOJ5PUWEJ1N1IMHQK1TNCZAIX0U4ABQ5WYPFC"
 
 
     override func awakeFromNib() {
