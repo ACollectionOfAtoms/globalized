@@ -7,15 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		665BBBDE1A9CE148003E1E4E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665BBBDD1A9CE148003E1E4E /* AppDelegate.swift */; };
 		665BBBE11A9CE148003E1E4E /* Globalized.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 665BBBDF1A9CE148003E1E4E /* Globalized.xcdatamodeld */; };
-		665BBBE31A9CE148003E1E4E /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665BBBE21A9CE148003E1E4E /* MasterViewController.swift */; };
-		665BBBE51A9CE148003E1E4E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665BBBE41A9CE148003E1E4E /* DetailViewController.swift */; };
 		665BBBE81A9CE148003E1E4E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 665BBBE61A9CE148003E1E4E /* Main.storyboard */; };
 		665BBBEA1A9CE148003E1E4E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 665BBBE91A9CE148003E1E4E /* Images.xcassets */; };
 		665BBBED1A9CE148003E1E4E /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 665BBBEB1A9CE148003E1E4E /* LaunchScreen.xib */; };
 		665BBBF91A9CE148003E1E4E /* GlobalizedTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665BBBF81A9CE148003E1E4E /* GlobalizedTests.swift */; };
-		AB1754431AACD0B30044E156 /* Venue.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1754421AACD0B30044E156 /* Venue.swift */; };
+		AB1754571AACFBDC0044E156 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AB17544B1AACFBDC0044E156 /* AppDelegate.m */; };
+		AB1754581AACFBDC0044E156 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB17544D1AACFBDC0044E156 /* DetailViewController.m */; };
+		AB1754591AACFBDC0044E156 /* Location.m in Sources */ = {isa = PBXBuildFile; fileRef = AB17544F1AACFBDC0044E156 /* Location.m */; };
+		AB17545A1AACFBDC0044E156 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1754501AACFBDC0044E156 /* main.m */; };
+		AB17545B1AACFBDC0044E156 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1754521AACFBDC0044E156 /* MasterViewController.m */; };
+		AB17545C1AACFBDC0044E156 /* Venue.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1754541AACFBDC0044E156 /* Venue.m */; };
+		AB17545D1AACFBDC0044E156 /* VenueCell.m in Sources */ = {isa = PBXBuildFile; fileRef = AB1754561AACFBDC0044E156 /* VenueCell.m */; };
 		EA39077E0D703988A02361D6 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 955D381707BF55DB16474911 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -33,10 +36,7 @@
 		515FA32C85F18DF55E71AF84 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		665BBBD81A9CE148003E1E4E /* Globalized.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Globalized.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		665BBBDC1A9CE148003E1E4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		665BBBDD1A9CE148003E1E4E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		665BBBE01A9CE148003E1E4E /* Globalized.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Globalized.xcdatamodel; sourceTree = "<group>"; };
-		665BBBE21A9CE148003E1E4E /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		665BBBE41A9CE148003E1E4E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		665BBBE71A9CE148003E1E4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		665BBBE91A9CE148003E1E4E /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		665BBBEC1A9CE148003E1E4E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -44,8 +44,20 @@
 		665BBBF71A9CE148003E1E4E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		665BBBF81A9CE148003E1E4E /* GlobalizedTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalizedTests.swift; sourceTree = "<group>"; };
 		955D381707BF55DB16474911 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		AB1754421AACD0B30044E156 /* Venue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Venue.swift; sourceTree = "<group>"; };
 		AB1754441AACD3100044E156 /* Globalized-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Globalized-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		AB17544A1AACFBDC0044E156 /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		AB17544B1AACFBDC0044E156 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		AB17544C1AACFBDC0044E156 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		AB17544D1AACFBDC0044E156 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		AB17544E1AACFBDC0044E156 /* Location.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Location.h; sourceTree = "<group>"; };
+		AB17544F1AACFBDC0044E156 /* Location.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Location.m; sourceTree = "<group>"; };
+		AB1754501AACFBDC0044E156 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		AB1754511AACFBDC0044E156 /* MasterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		AB1754521AACFBDC0044E156 /* MasterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		AB1754531AACFBDC0044E156 /* Venue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Venue.h; sourceTree = "<group>"; };
+		AB1754541AACFBDC0044E156 /* Venue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Venue.m; sourceTree = "<group>"; };
+		AB1754551AACFBDC0044E156 /* VenueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenueCell.h; sourceTree = "<group>"; };
+		AB1754561AACFBDC0044E156 /* VenueCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenueCell.m; sourceTree = "<group>"; };
 		CD7C8098E7A578F9B0933034 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,11 +112,19 @@
 		665BBBDA1A9CE148003E1E4E /* Globalized */ = {
 			isa = PBXGroup;
 			children = (
+				AB17544A1AACFBDC0044E156 /* AppDelegate.h */,
+				AB17544B1AACFBDC0044E156 /* AppDelegate.m */,
+				AB17544C1AACFBDC0044E156 /* DetailViewController.h */,
+				AB17544D1AACFBDC0044E156 /* DetailViewController.m */,
+				AB17544E1AACFBDC0044E156 /* Location.h */,
+				AB17544F1AACFBDC0044E156 /* Location.m */,
+				AB1754511AACFBDC0044E156 /* MasterViewController.h */,
+				AB1754521AACFBDC0044E156 /* MasterViewController.m */,
+				AB1754531AACFBDC0044E156 /* Venue.h */,
+				AB1754541AACFBDC0044E156 /* Venue.m */,
+				AB1754551AACFBDC0044E156 /* VenueCell.h */,
+				AB1754561AACFBDC0044E156 /* VenueCell.m */,
 				AB1754441AACD3100044E156 /* Globalized-Bridging-Header.h */,
-				665BBBDD1A9CE148003E1E4E /* AppDelegate.swift */,
-				665BBBE21A9CE148003E1E4E /* MasterViewController.swift */,
-				AB1754421AACD0B30044E156 /* Venue.swift */,
-				665BBBE41A9CE148003E1E4E /* DetailViewController.swift */,
 				665BBBE61A9CE148003E1E4E /* Main.storyboard */,
 				665BBBE91A9CE148003E1E4E /* Images.xcassets */,
 				665BBBEB1A9CE148003E1E4E /* LaunchScreen.xib */,
@@ -117,6 +137,7 @@
 		665BBBDB1A9CE148003E1E4E /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AB1754501AACFBDC0044E156 /* main.m */,
 				665BBBDC1A9CE148003E1E4E /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -282,11 +303,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB17545A1AACFBDC0044E156 /* main.m in Sources */,
+				AB17545D1AACFBDC0044E156 /* VenueCell.m in Sources */,
+				AB1754571AACFBDC0044E156 /* AppDelegate.m in Sources */,
+				AB17545C1AACFBDC0044E156 /* Venue.m in Sources */,
 				665BBBE11A9CE148003E1E4E /* Globalized.xcdatamodeld in Sources */,
-				AB1754431AACD0B30044E156 /* Venue.swift in Sources */,
-				665BBBDE1A9CE148003E1E4E /* AppDelegate.swift in Sources */,
-				665BBBE31A9CE148003E1E4E /* MasterViewController.swift in Sources */,
-				665BBBE51A9CE148003E1E4E /* DetailViewController.swift in Sources */,
+				AB1754591AACFBDC0044E156 /* Location.m in Sources */,
+				AB17545B1AACFBDC0044E156 /* MasterViewController.m in Sources */,
+				AB1754581AACFBDC0044E156 /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
