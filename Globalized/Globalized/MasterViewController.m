@@ -88,6 +88,10 @@
     RKObjectMapping *venueMapping = [RKObjectMapping mappingForClass:[Venue class]];
     [venueMapping addAttributeMappingsFromArray:@[@"name"]];
     
+    // define location object mapping
+    RKObjectMapping *locationMapping = [RKObjectMapping mappingForClass:[Location class]];
+    [locationMapping addAttributeMappingsFromArray:@[@"address", @"city", @"country", @"crossStreet", @"postalCode", @"state", @"distance", @"lat", @"lng"]];
+    
     // register mappings with the provider using a response descriptor
     RKResponseDescriptor *responseDescriptor =
     [RKResponseDescriptor responseDescriptorWithMapping:venueMapping
@@ -98,10 +102,6 @@
     
     [objectManager addResponseDescriptor:responseDescriptor];
     
-    // define location object mapping
-    RKObjectMapping *locationMapping = [RKObjectMapping mappingForClass:[Location class]];
-    [locationMapping addAttributeMappingsFromArray:@[@"address", @"city", @"country", @"crossStreet", @"postalCode", @"state", @"distance", @"lat", @"lng"]];
-    
     // define relationship mapping
     [venueMapping addPropertyMapping:[RKRelationshipMapping relationshipMappingFromKeyPath:@"location" toKeyPath:@"location" withMapping:locationMapping]];
 }
@@ -110,8 +110,7 @@
 {
     NSString *lat = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.latitude];
     NSString *lon = [NSString stringWithFormat:@"%.8f", currentLocation.coordinate.longitude];
-    NSString *latLon = [NSString stringWithFormat:@"%@%@%@", lat, @",", lon]; // @"37.33,-122.03" approximate latLon of The Mothership (a.k.a Apple headquarters)
-//    NSString *latLon = @"37.33,-122.03";
+    NSString *latLon = [NSString stringWithFormat:@"%@%@%@", lat, @",", lon];
     NSLog(@"\n\nhere's the latLon: %@", latLon);
     NSString *clientID = kCLIENTID;
     NSString *clientSecret = kCLIENTSECRET;
@@ -119,22 +118,25 @@
     NSDictionary *queryParams = @{@"ll" : latLon,
                                   @"client_id" : clientID,
                                   @"client_secret" : clientSecret,
-//                                  @"categoryId" : @"4bf58dd8d48988d1e0931735",
-                                  @"radius" : @"500",
+                                  @"categoryId" : @"4d4b7105d754a06375d81259,4d4b7105d754a06378d81259,4d4b7105d754a06374d81259",
+                                  @"intent" : @"browse",
+                                  @"radius" : @"800",
+                                  
                                   @"v" : @"20140118"};
     
     [[RKObjectManager sharedManager] getObjectsAtPath:@"/v2/venues/search"
                                            parameters:queryParams
                                               success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
                                                   _venues = mappingResult.array;
+                                                  NSArray *sortDescriptors = [NSArray arrayWithObject:
+                                                                              [NSSortDescriptor sortDescriptorWithKey:@"location.distance" ascending:true]];
+                                                  _venues = [_venues sortedArrayUsingDescriptors:sortDescriptors];
                                                   [self.tableView reloadData];
                                               }
                                               failure:^(RKObjectRequestOperation *operation, NSError *error) {
                                                   NSLog(@"Error finding venues: %@", error);
                                               }];
-    NSArray *sortDescriptors = [NSArray arrayWithObject:
-                                [NSSortDescriptor sortDescriptorWithKey:@"distanceLabel" ascending:true]];
-    _venues = [_venues sortedArrayUsingDescriptors:sortDescriptors];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -159,7 +161,6 @@
     Venue *venue = _venues[indexPath.row];
     cell.nameLabel.text = venue.name;
     cell.distanceLabel.text = [NSString stringWithFormat:@"%.0fm", venue.location.distance.floatValue];
-//    cell.checkinsLabel.text = [NSString stringWithFormat:@"%d checkins", venue.stats.checkins.intValue];
 
     return cell;
 }
